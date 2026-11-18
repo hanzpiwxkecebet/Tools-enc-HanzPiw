@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="HanzPiw ENC File — enkripsi dan dekripsi file JavaScript secara gratis di browser.">
+  <title>HanzPiw ENC File</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient a1"></div><div class="ambient a2"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">H</span><span>HANZPIW<span class="muted">.ENC</span><small>FILE PROTECTION TOOL</small></span></a>
+    <span class="free-pill"><i></i> FREE ACCESS</span>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow"><span></span> SECURE YOUR SOURCE CODE</div>
+      <h1>Protect your <span>JavaScript.</span></h1>
+      <p>Enkripsi dan pulihkan file JavaScript dengan aman langsung di browser. File tidak dikirim ke server.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="tabs" role="tablist">
+        <button class="tab active" id="encryptTab" role="tab" aria-selected="true">↗ Encrypt File</button>
+        <button class="tab" id="decryptTab" role="tab" aria-selected="false">↙ Decrypt File</button>
+      </div>
+
+      <div class="panel" id="encryptPanel">
+        <div class="panel-heading"><div><span class="step">01</span><h2>Encrypt JavaScript</h2></div><span class="tag">AES-256-GCM</span></div>
+        <label class="dropzone" id="encDrop" for="encFile">
+          <input id="encFile" type="file" accept=".js,text/javascript,application/javascript">
+          <span class="upload-icon">↑</span><strong id="encFileName">Choose a JavaScript file</strong>
+          <small>Drag & drop file .js here, or tap to browse</small>
+        </label>
+        <label class="field-label" for="encPassword">Encryption password</label>
+        <div class="password-wrap"><input id="encPassword" type="password" placeholder="Create a strong password" autocomplete="new-password"><button class="reveal" data-target="encPassword" type="button">SHOW</button></div>
+        <div class="hint">Gunakan password yang kuat dan simpan baik-baik. Password tidak dapat dipulihkan.</div>
+        <button class="primary" id="encryptBtn">Encrypt & Download <span>→</span></button>
+        <p class="status" id="encStatus" aria-live="polite"></p>
+      </div>
+
+      <div class="panel hidden" id="decryptPanel">
+        <div class="panel-heading"><div><span class="step">02</span><h2>Decrypt File</h2></div><span class="tag">AES-256-GCM</span></div>
+        <label class="dropzone" id="decDrop" for="decFile">
+          <input id="decFile" type="file" accept=".enc,application/octet-stream">
+          <span class="upload-icon">↑</span><strong id="decFileName">Choose an encrypted file</strong>
+          <small>Select a file created by HanzPiw ENC File (.enc)</small>
+        </label>
+        <label class="field-label" for="decPassword">Decryption password</label>
+        <div class="password-wrap"><input id="decPassword" type="password" placeholder="Enter your encryption password" autocomplete="current-password"><button class="reveal" data-target="decPassword" type="button">SHOW</button></div>
+        <button class="primary" id="decryptBtn">Decrypt & Download <span>→</span></button>
+        <p class="status" id="decStatus" aria-live="polite"></p>
+      </div>
+      <div class="security-note"><span>◆</span><div><strong>Private by design</strong><small>Proses enkripsi berlangsung di perangkatmu. File dan password tidak diunggah atau disimpan oleh website.</small></div></div>
+    </section>
+
+    <section class="features">
+      <article><b>01 / CLIENT-SIDE</b><h3>Local Processing</h3><p>File diproses langsung di browser, tanpa upload ke server.</p></article>
+      <article><b>02 / ENCRYPTION</b><h3>AES-256-GCM</h3><p>Enkripsi terautentikasi dengan kunci turunan dari password.</p></article>
+      <article><b>03 / NO ACCOUNT</b><h3>Free Access</h3><p>Tanpa login, API Key, atau biaya berlangganan.</p></article>
+    </section>
+    <footer>© <span id="year"></span> <strong>HanzPiw</strong> · ENC FILE <span class="footer-right">BUILT FOR PRIVACY</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
